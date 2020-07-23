@@ -1,0 +1,115 @@
+<?php 
+return[ 
+//home
+   'Best Seller'=>'Best Seller',
+  'Hot'=>'Hot',
+  'New'=>'New',
+   'buy now'=>'buy now',
+  'home'=>'Home',
+  'product'=>'Product',
+  'about us'=>'About Us',
+  'login'=>'Login',
+  'register'=>'Register',
+  'call us'=>'Call Us',
+  'about WAEshop'=>'About WAEshop',
+  'Lorem'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  'Information'=>'Information',
+  'intro'=>'introduce',
+  'Customer Service'=>'Customer Service',
+  'Terms Conditions'=>'Terms Conditions',
+  'Our Sitemap'=>'Our Sitemap',
+  'Privacy Policy'=>'Privacy Policy',
+  'Delivery Information'=>'Delivery Information',
+  'Privacy Policy'=>'Privacy Policy',
+  'Contact Us'=>'Contact Us',
+  'Address'=>'Address',
+  'Phone'=>'Phone',
+  'Email'=>'Email',
+  'All Rights Reserved'=>'All Rights Reserved. &copy',
+  'Design By'=>'Design By',
+   'Company'=>'Company there bthore',
+   // end footer /product next
+   'Search'=>'Search here',
+   'brand'=>'Brand',
+   'cate'=>'Category',
+   'Shop'=>'Shop',
+    'slogin'=>'Dedication reputation, quality products, customer care',
+  'All'=>'All',
+ 
+  'Add to Cart'=>'Add to Cart',
+  'Shop Now'=>'Shop Now',
+  'Sales Off 10%! Laptop Dell'=>'Sales Off 10%! Laptop Dell',
+  'Sales 50% - 80% Combo keyboard'=>'Sales 50% - 80% Combo keyboard',
+  'off Mouse'=>' 20% off Mouse',
+  'Off 50%!  buy Laptop Acer'=>'Off 50%!  buy Laptop Acer',
+  'Off 10%! buy Laptop Macbook'=>'Off 10%! buy Laptop Macbook',
+  'Images'=>'Images',
+  'Product Name'=>'Product Name',
+  'Price'=>'Price',
+  'Quantity'=>'Quantity',
+  'Total'=>'Total',
+  'Remove'=>'Remove',
+   'ORDER SUMMARY'=>'ORDER SUMMARY',
+  'Cart is empty'=>'Cart is empty',
+  'Are you sure you want to remove product form cart'=>'Are you sure you want to remove product form cart ?',
+  'No'=>'No',
+  'Yes'=>'Yes',
+  'Check Out'=>'Check Out',
+  'Total amount'=>'Total amount',
+  'Cart is empty'=>'Cart is empty !',
+  'VIEW CART'=>'VIEW CART',
+  'Member Login'=>'Member Login',
+  'Forgot Password'=>'Forgot Password',
+  'User Name'=>'User Name',
+  'Password'=>'Password',
+    'Confirm Password'=>'Confirm Password',
+     'Customer info'=>' CUSTOMERS INFORMATION',
+  'Full Name'=>'Full Name',
+  'Address'=>'Address',
+  'Phone No'=>'Phone No',
+  'ORDER SUMMARY'=>'ORDER SUMMARY',
+  'PAYMENT METHOD'=>'PAYMENT METHOD',
+   'Cash'=>'Cash on delivery',
+    'Momo'=>'Momo internet banking',
+     'Pay'=>'PAYMENT',
+  'I accept the'=>'I accept the',
+  'Terms of Use'=>'Terms of Use',
+  'Privacy Policy'=>'Privacy Policy',
+  //vechungtoi
+  'We are'=>'We are',
+  'Sed ut'=>'In September 2014, Haravan, the office, one of the websites, one of our websites could be an online software.
+
+Love, finance, culture, culture, finance, culture, technology finance and our content
+
+Strong, intense, Haravan not, data, sex',
+  'Meet Our Team'=>'Meet Our Team',
+  'Web Developer'=>'Web Developer',
+   'Categories'=>'Categories',
+    'Brand'=>'Brand',
+     'Home'=>'Home',
+      'Shop'=>'Shop',
+       'View'=>'View',
+      'about ae'=>'Dedication reputation, quality products, customer care',
+ 'Shop Detail'=>'Shop Detail',
+ 'Short Description'=>'Short Description',
+ 'Detail'=>'Detail',
+ //login
+
+    'Enter email'=>'Enter email',
+     'Password'=>'Password',
+// contact -us
+     
+     'Contact'=>'Contact us For inquiries about our products',
+     'Contact Us'=>'Contact Us',
+     'CONTACT INFO'=>'CONTACT INFO',
+     'Content'=>'If you have questions or need advice, please contact us immediately for advice and receive special offers and other attractive programs.',
+     'GET IN TOUCH'=>'GET IN TOUCH',
+     'content us'=>'+ To make contact, please fill in the form below.',
+
+
+
+
+
+
+
+];

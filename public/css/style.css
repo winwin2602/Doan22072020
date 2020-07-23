@@ -1,0 +1,295 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.font_roboto, .content_yield {
+	font-family: 'Roboto', sans-serif;
+}
+/* Reset */
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	color: #3d3d3d;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #3d3d3d;
+	text-decoration: none;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+	vertical-align: middle;
+}
+
+/* Style */
+#admin_layout {
+	display: flex;
+}
+
+/* Side bar */
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	background-color: #4bc984;
+	background-image: linear-gradient(180deg, #4bc984 10%, #3a9e68 100%);
+	background-size: cover;
+	width: 21rem;
+	min-height: 100vh;
+}
+
+.sidebar .dash_board {
+	text-align: center;
+	padding: 30px 0;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 30px;
+}
+
+.sidebar .dash_board a {
+	color: #fff;
+}
+
+.sidebar .dash_board .dash_board_ava img {
+	max-width: 36%;
+	margin-bottom: 15px;
+	border-radius: 100%;
+}
+
+.sidebar .dash_board .dash_board_link {
+	font-weight: bold;
+	font-size: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.sidebar .dash_board .dash_board_link:hover, .sidebar .dash_board .dash_board_link:focus, .sidebar .dash_board .dash_board_link:active {
+	color: #fff;
+}
+
+.sidebar .list_item {
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.sidebar .list_item .item_link {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: left;
+	padding: 0 2.5rem;
+	color: rgba(255, 255, 255, .8);
+	text-decoration: none;
+}
+
+.sidebar .list_item .item_link:active, .sidebar .list_item .item_link:focus, .sidebar .list_item .item_link:hover {
+	color: #fff;
+}
+
+/* Content */
+
+.content {
+	flex: 1 0 auto;
+	background-color: #f8f9fc;
+}
+
+.topbar {
+	margin-bottom: 1.5rem;
+	background-color: #fff;
+	box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 30px;
+	position: relative;
+}
+
+.topbar .search_form  {
+	width: 30rem;
+}
+
+.topbar .search_form .input-group {
+	position: relative;
+	display: flex;
+	width: 100%;
+}
+
+.logout_button {
+	display: none;
+	position: absolute;
+	max-width: 120px;
+	width: 100%;
+	background: #fff;
+	padding: 5px 15px;
+	border: 1px solid #858796;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	top: 0;
+	right: 0;
+	margin-top: 50px;
+	margin-right: 30px;
+}
+
+.admin_profile a {
+	text-decoration: none;
+}
+
+/* Content page */
+.content_yield .page_title {
+	margin: 35px 0;
+}
+
+.content_yield .add_new_button {
+	margin-bottom: 20px;
+}
+
+.content_yield .thead_green {
+	background: #4bc984;
+	color: #fff;
+}
+
+.content_yield table.table_xk tbody tr:nth-of-type(2n+1) {
+	background-color: rgba(0,0,0,.05);
+}
+
+.content_yield table > tbody td a {
+	margin-right: 5px;
+}
+.content_yield table > tbody td a:last-child {
+	margin-right: 0;
+}
+.content_yield table > tbody td a .info {
+	color: #36b9cc;
+}
+.content_yield table > tbody td a .edit {
+	color: #4e73df;
+}
+.content_yield table > tbody td a .delete {
+	color: #e74a3b;	
+}
+
+/* Login form */
+#login_page {
+	background-color: #4bc984;
+	background-image: linear-gradient(180deg, #4bc984 10%, #3a9e68 100%);
+	max-width: 100%;
+	min-height: 100vh;
+	display: block;
+}
+
+#login_page .login_inner {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	max-width: 840px;
+	margin: 0 auto;
+	background: #fff;
+	margin-top: 80px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#login_page .login_form h3 {
+	text-align: center;
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+#login_page .login_form .form_custom {
+	border-radius: 0;
+	padding: 10px;
+}
+
+#login_page .login_form .submit_button {
+	width: 100%;
+	border-radius: 0;
+	padding: 10px;
+	transition: 0.5s;
+}
+
+#login_page .login_form .submit_button:hover, #login_page .login_form .submit_button:focus, #login_page .login_form .submit_button:active {
+	color: #286090;
+	background: transparent;
+}
+
+#login_page .login_inner .gallery {
+	padding: 15px 0;
+}
+
+#login_page .login_inner .gallery img {
+	width: 100%;
+}
+/*background green*/
+.bg-color-green{
+	background-color: #4bc984;
+	color: white;
+	font-weight: bold; 
+}
+.bg-color-green:hover {
+	background-color: #4bc984;
+	color: white;
+	font-weight: bold; 
+}
+/* Admin Dashboard */
+h2.title {
+	margin-bottom: 30px;
+	padding-left: 15px;
+}
+
+.total {
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	border-left: 7px solid #dddfeb;
+	transition: 0.3s;
+	background-color: #fff;
+	margin-bottom: 30px;
+}
+
+.total:hover {
+	color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-top: -10px;
+	margin-right: -5px;
+	margin-left: 5px;
+}
+
+.total .icon {
+	flex-grow: 0.5;
+}
+
+.total .info {
+	flex-grow: 1;
+}
+
+.total .info h6 {
+	text-transform: uppercase;
+}
+
+.total i {
+	font-size: 2.5em;
+	color: #dddfeb;
+}
+
+.total.product_total {
+	border-color: #4e73df;
+}
+
+.total.product_total:hover {
+	background-color: #4e73df;
+}
+
+.total.customer_total {
+	border-color: #36b9cc;
+}
+
+.total.customer_total:hover {
+	background-color: #36b9cc;
+}
+
+.total.revenue_total {
+	border-color: #1cc88a;
+}
+
+.total.revenue_total:hover {
+	background-color: #1cc88a;
+}
