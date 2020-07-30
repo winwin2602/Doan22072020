@@ -6,4 +6,6 @@ return[
   'password'=>'Vui lòng nhập mật khẩu',
   'Register'=>'Đăng ký',
   'login'=>'Đăng nhập',
+  //session
+  'err'=>'Bạn cần đăng nhập trước khi thanh toán'
 ];

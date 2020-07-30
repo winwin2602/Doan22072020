@@ -137,7 +137,7 @@ class CartController extends Controller
             $customer = $this->customerRepository->getCustomerByUserId(Auth::user()->id);
             return view('client.layouts.payment', compact('customer'));
         }else{
-            return redirect()->back()->with('err', 'You need to login before checkout!');
+            return redirect()->back()->with('err', trans('log.err'));
         }
     }
 

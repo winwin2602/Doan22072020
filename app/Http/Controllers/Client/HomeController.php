@@ -8,7 +8,8 @@ use App\Repositories\Category\CategoryInterface;
 use App\Repositories\Product\ProductInterface;
 use App\Repositories\Slide\SlideInterface;
 use Illuminate\Http\Request;
-
+use Mail;
+use Session;
 class HomeController extends Controller
 {
     private $productRepository;
@@ -17,7 +18,7 @@ class HomeController extends Controller
     private $categoryRepository;
 
     public function __construct(ProductInterface $productRepos, BrandInterface $brandRepos,
-                                SlideInterface $slideRepos, CategoryInterface $categoryRepos)
+        SlideInterface $slideRepos, CategoryInterface $categoryRepos)
     {
         $this->productRepository = $productRepos;
         $this->brandRepository = $brandRepos;
@@ -39,10 +40,22 @@ class HomeController extends Controller
     {
         return view('client.layouts.about_us');
     }
+    // send gmail
     public function contact()
     {
         return view('client.layouts.contact_us');
     }
+    public function sendContact(Request $request)
+    {
+        // dd($request);
+        $input = $request->all();
+        Mail::send('client.layouts.mail', array('name'=>$input["name"],'email'=>$input["email"], 'subject'=>$input['subject'], 'mess'=>$input['mess']), function($message){
+            $message->to('winwin260299@gmail.com')->subject('Visitor Feedback!');
+        });
+        Session::flash('flash_message', 'Send message successfully!');
+        return back();
+    }
+    // end
     public function login()
     {
         return view('client.layouts.login');

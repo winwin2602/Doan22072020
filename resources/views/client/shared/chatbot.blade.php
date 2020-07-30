@@ -5,15 +5,15 @@
   </div>
   <div class="chat-box">
     <div class="chat-box-header">
-      ChatBot
+      Tư vấn trực tuyến
       <span class="chat-box-toggle"><i class="material-icons">close</i></span>
     </div>
-    <div class="chat-box-body">
-      <div class="chat-box-overlay">   
-      </div>
+    
+      <!-- <div class="chat-box-overlay">   
+      </div> -->
       <div class="chat-logs">
       </div><!--chat-log -->
-    </div>
+    
     <div class="chat-input">      
       <form id="chat-bot-demo">
         <input type="text" id="chat-input" placeholder="Send a message..."/>

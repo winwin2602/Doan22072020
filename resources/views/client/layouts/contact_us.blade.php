@@ -42,7 +42,11 @@
                     <div class="contact-form-right">
                         <h2>{{trans('message.GET IN TOUCH')}}</h2>
                         <p>{{trans('message.content us')}}</p>
-                        <form id="contactForm">
+                        @if(Session::has('flash_message'))
+                            <strong>{{ Session::get('flash_message') }}</strong>
+                        @endif  
+                        <form id="contactForm" method="post" action="{{ route('sendcontact')}}">
+                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -52,19 +56,19 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="{{trans('regis.email')}}" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                                        <input type="email" placeholder="{{trans('regis.email')}}" id="email" class="form-control" name="email" required data-error="Please enter your email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" name="name" placeholder="{{trans('regis.subject')}}" required data-error="Please enter your Subject">
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="{{trans('regis.subject')}}" required data-error="Please enter your Subject">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="{{trans('regis.Your Message')}}" rows="4" data-error="Write your message" required></textarea>
+                                        <textarea class="form-control" id="message" name="mess" placeholder="{{trans('regis.Your Message')}}" rows="4" data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">

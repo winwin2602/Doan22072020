@@ -1960,6 +1960,10 @@
 
 .fa-facebook-messenger:before {
   content:"\f39f";
+  font-size: 44px;
+  position: absolute;
+  top: 14%;
+  left: 17%;
   ;
 }
 

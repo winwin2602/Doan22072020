@@ -7,5 +7,7 @@ return[
 	'password'=>'Please enter  password',
 	'Register'=>'Register',
 	'login'=>'login',
+	//session
+	'err'=>'You need to login before checkout'
 
 ];

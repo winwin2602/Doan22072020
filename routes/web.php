@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace'=>'Client','prefix'=>'/'],function (){
 	Route::get('/home', 'HomeController@index');
 	Route::get('/about-us', 'HomeController@about');
-	Route::get('/contact-us', 'HomeController@contact');
+	
 	Route::get('/register', 'HomeController@register');
 	Route::get('/product-all','ProductController@index');
     Route::get('/product-detail','ProductController@product_detail');
@@ -26,6 +26,9 @@ Route::group(['namespace'=>'Client','prefix'=>'/'],function (){
     Route::get('add-to-cart', 'CartController@addToCart');
     Route::delete('remove-from-cart', 'CartController@removeFromCart');
     Route::patch('update-cart', 'CartController@updateCart');
+    // send gmail
+    Route::get('/contact-us', 'HomeController@contact');
+    Route::post('/contact-us', 'HomeController@sendContact')->name('sendcontact');
 });
 Route::group(['middleware' => ['web']], function () {
 	Route::get('lang/{lang}','LanguageController@changelang')->name('lang');
