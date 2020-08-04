@@ -101,7 +101,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ url('/home') }}"><img src="{{asset('front_assets/images/logo.png')}}" class="logo" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/home') }}"><img src="{{asset('front_assets/images/logo-demo1.png')}}" class="logo" alt=""></a>
             </div>
             <!-- End Header Navigation -->
             <!-- Collect the nav links, forms, and other content for toggling -->

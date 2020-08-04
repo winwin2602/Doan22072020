@@ -14,17 +14,17 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Site Metas -->
-    <title>WAEshop -Team</title>
+    <title>Panda Electric Shop</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Site Icons -->
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-    <link rel="shortcut icon" href="{{asset('front_assets/images/favicon.ico')}}" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="{{asset('front_assets/images/favicon.ico')}}" type="image/x-icon"> -->
     <link rel="apple-touch-icon" href="{{asset('front_assets/images/apple-touch-icon.png')}}">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{{asset('front_assets/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('front_assets/images/favicon-demo.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{asset('front_assets/images/apple-touch-icon.png')}}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('front_assets/css/nice-select.css')}}">
