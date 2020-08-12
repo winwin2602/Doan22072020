@@ -11,4 +11,5 @@ interface ProductInterface
     public function getByCategoryId($id);
     public function getByBrandId($id);
     public function getByKeyword($keyword);
+    public function getByPrice($min, $max);
 }

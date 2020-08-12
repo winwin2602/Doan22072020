@@ -39,7 +39,9 @@ class ProductController extends Controller
         if($request->keyword){
             $products = $this->productRepository->getByKeyword($request->keyword);
         }
-
+        if($request->min_price || $request->max_price){
+            $products = $this->productRepository->getByPrice($request->min_price, $request->max_price);
+        }
         return view('client.layouts.products', compact('products', 'categories', 'brands'));
     }
 

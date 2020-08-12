@@ -1,11 +1,11 @@
 @extends('admin.shared.main')
 @section('title')
-    WeaShopOnline - Order details
+    Chi tiết đơn hàng
 @endsection
 @section('content')
     <div class="content_yield">
         <div class="row">
-            <h3 class="col-md-8 page_title">Order Detail</h3>
+            <h3 class="col-md-8 page_title">Chi tiết đơn hàng</h3>
             <div class="col-md-4">
                 @if(Session::has('message'))
                     <div id="div-alert" style="position:absolute; right: 10px;" class="float-right mt-2 alert alert-success alert-dismissible show" role="alert" style="position: absolute;">
@@ -29,12 +29,12 @@
         <table class="table table_xk table-hover table-bordered">
             <thead class="thead_green">
             <tr>
-                <th class="text-center">Id</th>
-                <th class="text-center">Product Name</th>
-                <th class="text-center">Image</th>
-                <th class="text-center">Quantity</th>
-                <th class="text-center">Price</th>
-                <th class="text-center">Total</th>
+                <th class="text-center">STT</th>
+                <th class="text-center">Tên sản phẩm</th>
+                <th class="text-center">Hình ảnh</th>
+                <th class="text-center">Số lượng</th>
+                <th class="text-center">Giá</th>
+                <th class="text-center">Thành tiền</th>
             </tr>
             </thead>
             <tbody>
@@ -54,7 +54,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5" class="text-right">Total Amount</td>
+                    <td colspan="5" class="text-right">Tổng thành tiền</td>
                     <td colspan="1" class="text-center">${{$total_amount}}</td>
                 </tr>
             </tfoot>

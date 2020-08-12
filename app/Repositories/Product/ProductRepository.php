@@ -46,4 +46,19 @@ class ProductRepository extends EloquentRepository implements ProductInterface
     public function getByKeyword($keyword){
         return $this->_model::where('is_deleted', 0)->where('name', 'like', '%'.$keyword.'%')->get();
     }
+    public function getByPrice($min, $max){
+        $products = null;
+        if($min != null){
+            if ($max != null){
+                $products = $this->_model::where('is_deleted', 0)->where([['price','>=',$min],['price','<=',$max]])->get();
+            }else{
+                $products = $this->_model::where('is_deleted', 0)->where('price','>=',$min)->get();
+            }
+        }elseif ($max != null){
+            $products = $this->_model::where('is_deleted', 0)->where('price','<=',$max)->get();
+        }else{
+            $products = $this->_model::where('is_deleted', 0)->get();
+        }
+        return $products;
+    }
 }

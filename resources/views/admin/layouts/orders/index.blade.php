@@ -1,11 +1,11 @@
 @extends('admin.shared.main')
 @section('title')
-weaShopOnline - Orders
+    Panda electric shop - Đơn hàng
 @endsection
 @section('content')
 <div class="content_yield">
 	<div class="row">
-		<h3 class="page_title">Orders</h3>
+		<h3 class="page_title">ĐƠn hàng</h3>
 		<div class="col-md-12">
 			@if(Session::has('message'))
 			<div id="div-alert" style="position:absolute; right: 10px;" class="float-right mt-2 alert alert-success alert-dismissible show" role="alert" style="position: absolute;">
@@ -21,18 +21,18 @@ weaShopOnline - Orders
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			@endif			
+			@endif
 		</div>
 	</div>
 	<table class="table table_xk table-hover table-bordered">
 		<thead class="thead_green">
 			<tr>
-				<th class="text-center">Id</th>
-				<th class="text-center">Customer Name</th>
-				<th class="text-center">Order Status</th>
-				<th class="text-center">Payment Status</th>
-				<th class="text-center">Transaction Date</th>
-				<th class="text-center">Action</th>
+				<th class="text-center">STT</th>
+				<th class="text-center">Tên khách hàng</th>
+				<th class="text-center">Trạng thái</th>
+				<th class="text-center">Trạng thái thanh toán</th>
+				<th class="text-center">Ngày giao dịch</th>
+				<th class="text-center">#</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -61,7 +61,7 @@ weaShopOnline - Orders
 
 				<td class="text-center action_icon">
 					<a href="{{url('admin/order/show/'.$order->id)}}"><i class="fa fa-info detail"></i></a>
-					<a type="button" class="fas fa-trash-alt deletebutton text-danger btn" data-id="{{$order->id}}" data-toggle="modal" data-target="#Modal"></a>
+{{--					<a type="button" class="fas fa-trash-alt deletebutton text-danger btn" data-id="{{$order->id}}" data-toggle="modal" data-target="#Modal"></a>--}}
 				</td>
 			</tr>
 			@endforeach
@@ -70,7 +70,7 @@ weaShopOnline - Orders
 	</table>
 </div>
 
-{{Form::open(['route' => ['order.delete'], 'method' => 'DELETE'])}}  
+{{Form::open(['route' => ['order.delete'], 'method' => 'DELETE'])}}
 @include('admin.modal.modaldelete')
 {{ Form::close() }}
 <script>
