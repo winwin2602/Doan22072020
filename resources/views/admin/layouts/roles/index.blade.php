@@ -1,6 +1,6 @@
 @extends('admin.shared.main')
 @section('title')
-weaShopOnline - Roles
+    Panda electric shop - Phân quyền
 @endsection
 @section('content')
 <div class="content_yield">
@@ -21,18 +21,18 @@ weaShopOnline - Roles
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @endif          
+            @endif
         </div>
 
     </div>
-    <a href="{{ route('role.store') }}" class="btn bg-color-green add_new_button"><i class="fas fa-plus"></i> Add new</a>        
+    <a href="{{ route('role.store') }}" class="btn bg-color-green add_new_button"><i class="fas fa-plus"></i> Thêm mới</a>
     <table class="table table_xk table-hover table-bordered">
         <thead class="thead_green">
             <tr>
                 <th class="text-center" style="width: 50px;">STT</th>
                 <th class="text-center">Name</th>
-                <th class="text-center">Display Name</th>
-                <th class="text-center">Action</th>
+                <th class="text-center">Display name</th>
+                <th class="text-center">#</th>
             </tr>
         </thead>
         <tbody>

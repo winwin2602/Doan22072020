@@ -1,24 +1,24 @@
 @extends('admin.shared.main')
 @section('title')
-Edit product
+    Cập nhật
 @endsection
 @section('content')
 <div class="content_yield">
 	{{ Form::open(['route'=>['product.update',$product->id],'method'=>'put','enctype '=>'multipart/form-data','class' => 'col-md-12 row']) }}
 	<div class="col-md-12 m-auto">
-		<h3 class="mb-5 font-weight-bold">Product</h3>		
+		<h3 class="mb-5 font-weight-bold">Sản phẩm</h3>
 		<div class="col-lg-10 col-md-12 col-sm-12 row">
 			<div class="form-group">
-				{{ Form::label('Name: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Tên sản phẩm: ','',['class' => 'font-weight-bold']) }}
 				{!! Form::text('name', $product->name, [
 				'class' => 'form-control',
-				'placeholder'=>"Name Product"
+				'placeholder'=>"Tên sản phẩm"
 				])
 				!!}
 				<span class="text-danger">{{ $errors->first('name')}}</span>
 			</div>
 			<div class="form-group">
-				<b>{{ Form::label('Product: ')}}</b>
+				<b>{{ Form::label('Sản phẩm: ')}}</b>
 				{{ Form::checkbox('is_new', null, $product->is_new == 1 ? true : false,['id'=>'is_new'])}}
 				{{ Form::label('New')}}
 
@@ -36,7 +36,7 @@ Edit product
 				<span class="text-danger">{{ $errors->first('code')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Description: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Mô tả: ','',['class' => 'font-weight-bold']) }}
 				{!! Form::textarea('description', $product->description, [
 				'class' => 'form-control','id'=>'editor1',
 				'placeholder'=>"Description"
@@ -44,65 +44,65 @@ Edit product
 				!!}
 				<span class="text-danger">{{ $errors->first('description')}}</span>
 			</div>
-			
+
 			<div class="form-group">
-				{{ Form::label('Detail: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Chi tiết: ','',['class' => 'font-weight-bold']) }}
 				{!! Form::textarea('detail', $product->detail, [
 				'class' => 'form-control',
 				'rows' => '5',
-				'placeholder'=>"Detail"
+				'placeholder'=>"Chi tiết"
 				])
 				!!}
 				<span class="text-danger">{{ $errors->first('detail')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Image: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Hình ảnh: ','',['class' => 'font-weight-bold']) }}
 				{{ Form::file('url_image', ['class' => 'form-control' ]) }}
 				<input type="hidden" value="{{$product->url_image}}" name="image"><br>
 				<span class="text-danger">{{ $errors->first('url_image')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Price: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Giá: ','',['class' => 'font-weight-bold']) }}
 				{!! Form::number('price', $product->price, [
 				'class' => 'form-control','onKeyPress'=>'return isNumberKey(event)',
-				'placeholder'=>"Price"
+				'placeholder'=>"Giá"
 				])
 				!!}
 				<span class="text-danger">{{ $errors->first('price')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Promotion Price: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Giá khuyến mãi: ','',['class' => 'font-weight-bold']) }}
 				{!! Form::number('promotion_price', $product->promotion_price, [
 				'class' => 'form-control','onKeyPress'=>'return isNumberKey(event)',
-				'placeholder'=>"Promotion Price"
+				'placeholder'=>"Giá khuyến mãi"
 				])
 				!!}
 				<span class="text-danger">{{ $errors->first('promotion_price')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Quantity: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::label('Số lượng: ','',['class' => 'font-weight-bold']) }}
 				{!! Form::number('quantity', $product->quantity, [
 				'class' => 'form-control','onKeyPress'=>'return isNumberKey(event)',
-				'placeholder'=>"Quantity"
+				'placeholder'=>"Số lượng"
 				])
 				!!}
 				<span class="text-danger">{{ $errors->first('quantity')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Brand: ','',['class' => 'font-weight-bold']) }}
-				{{ Form::select('brand_id', $brands, $product->brand_id,['class' => 'form-control','placeholder'=>"Choose Brand"]) }}
+				{{ Form::label('Nhãn hiệu: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::select('brand_id', $brands, $product->brand_id,['class' => 'form-control','placeholder'=>"Chọn nhãn hiệu"]) }}
 
 				<span class="text-danger">{{ $errors->first('brand_id')}}</span>
 			</div>
 			<div class="form-group">
-				{{ Form::label('Category: ','',['class' => 'font-weight-bold']) }}
-				{{ Form::select('category_id', $categories, $product->category_id,['class' => 'form-control','placeholder'=>"Choose Category"]) }}
-				
+				{{ Form::label('Thể loại: ','',['class' => 'font-weight-bold']) }}
+				{{ Form::select('category_id', $categories, $product->category_id,['class' => 'form-control','placeholder'=>"Chọn thể loại"]) }}
+
 				<span class="text-danger">{{ $errors->first('category_id')}}</span>
 			</div>
 			<div class="form-group text-right">
-				<a class="btn btn-info mt-3" href="{{ route('product.index') }}" title="back"><i class="fas fa-arrow-left"></i> Back to list</a>
-				{{ Form::submit('Save',['class' => 'font-weight-bold text-white btn bg-color-green mt-3']) }}
+				<a class="btn btn-info mt-3" href="{{ route('product.index') }}" title="back"><i class="fas fa-arrow-left"></i> Xem danh sách</a>
+				{{ Form::submit('Lưu',['class' => 'font-weight-bold text-white btn bg-color-green mt-3']) }}
 			</div>
 		</div>
 	</div>

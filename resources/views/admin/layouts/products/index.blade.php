@@ -1,11 +1,11 @@
 @extends('admin.shared.main')
 @section('title')
-weaShopOnline - Products
+    Panda electric shop - Sản phẩm
 @endsection
 @section('content')
 <div class="content_yield">
 	<div class="row">
-		<h3 class="page_title">Products</h3>
+		<h3 class="page_title">Sản phẩm</h3>
 		<div class="col-md-12">
 			@if(Session::has('message'))
 			<div id="div-alert" style="position:absolute; right: 10px;" class="float-right mt-2 alert alert-success alert-dismissible show" role="alert" style="position: absolute;">
@@ -21,22 +21,22 @@ weaShopOnline - Products
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			@endif			
+			@endif
 		</div>
 	</div>
-	<a href="{{ route('product.create') }}" class="btn bg-color-green add_new_button"><i class="fas fa-plus"></i> Add new</a>	
+	<a href="{{ route('product.create') }}" class="btn bg-color-green add_new_button"><i class="fas fa-plus"></i> Thêm mới</a>
 	<table class="table table_xk table-hover table-bordered">
 		<thead class="thead_green">
 			<tr>
-				<th class="text-center" style="width: 3%">Id</th>
-				<th class="text-center" style="width: 10%">Name</th>
-				<th class="text-center" style="width: 5%">Image</th>
-				<th class="text-center" style="width: 10%">Price</th>
-				<th class="text-center" style="width: 10%">Promotion Price</th>
-				<th class="text-center" style="width: 5%">Quantity</th>
+				<th class="text-center" style="width: 3%">STT</th>
+				<th class="text-center" style="width: 10%">Tên</th>
+				<th class="text-center" style="width: 5%">Hình ảnh</th>
+				<th class="text-center" style="width: 10%">Giá</th>
+				<th class="text-center" style="width: 10%">Giá khuyến mãi</th>
+				<th class="text-center" style="width: 5%">Số lương</th>
 				<th class="text-center" style="width: 3%">Hot</th>
 				<th class="text-center" style="width: 3%">New</th>
-				<th class="text-center" style="width: 4%">Action</th>
+				<th class="text-center" style="width: 4%">#</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -71,7 +71,7 @@ weaShopOnline - Products
 		</tbody>
 	</table>
 </div>
-{{Form::open(['route' => ['product.delete'], 'method' => 'DELETE'])}}  
+{{Form::open(['route' => ['product.delete'], 'method' => 'DELETE'])}}
 @include('admin.modal.modaldelete')
 {{ Form::close() }}
 <script>

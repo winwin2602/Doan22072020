@@ -1,11 +1,11 @@
 @extends('admin.shared.main')
 @section('title')
-weaShopOnline - Slides
+    Panda electric shop - Hiệu ứng
 @endsection
 @section('content')
 <div class="content_yield">
     <div class="row">
-        <h3 class="page_title">Slides</h3>
+        <h3 class="page_title">Hiệu ứng</h3>
         <div class="col-md-12">
             @if(Session::has('message'))
             <div id="div-alert" style="position:absolute; right: 10px;" class="float-right mt-2 alert alert-success alert-dismissible show" role="alert" style="position: absolute;">
@@ -21,19 +21,19 @@ weaShopOnline - Slides
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @endif          
+            @endif
         </div>
 
     </div>
-    <a href="{{ route('slide.create') }}" class="btn bg-color-green add_new_button"><i class="fas fa-plus"></i> Add new</a>        
+    <a href="{{ route('slide.create') }}" class="btn bg-color-green add_new_button"><i class="fas fa-plus"></i> Thêm mới</a>
     <table class="table table_xk table-hover table-bordered">
         <thead class="thead_green">
             <tr>
                 <th class="text-center" style="width: 50px;">STT</th>
-                <th class="text-center">Content</th>
-                <th class="text-center">Description</th>
-                <th class="text-center">Image</th>
-                <th class="text-center">Action</th>
+                <th class="text-center">Nội dung</th>
+                <th class="text-center">Mô tả</th>
+                <th class="text-center">Hình ảnh</th>
+                <th class="text-center">#</th>
             </tr>
         </thead>
         <tbody>

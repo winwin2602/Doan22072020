@@ -1,6 +1,6 @@
 @extends('admin.shared.main')
 @section('title')
-    Add new Role
+    Thêm mới
 @endsection
 @section('content')
     <div class="content_yield">
@@ -27,7 +27,7 @@
                     <span class="text-danger">{{ $errors->first('display_name')}}</span>
                 </div>
                 <div class="form-group">
-                    <label for="">Permission:</label> 
+                    <label for="">Permission:</label>
                     <div class="role_group">
                     @foreach($permissions as $key => $permission)
                         <div class="col-2">

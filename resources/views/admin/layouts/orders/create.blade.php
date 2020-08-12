@@ -6,7 +6,7 @@ Add new order
 <div class="content_yield">
     {{ Form::open(['url' => 'admin/order', 'method' => 'post','enctype '=>'multipart/form-data','class' => 'col-md-12 row']) }}
     <div class="col-md-12 m-auto">
-        <h3 class="mb-5 font-weight-bold">Orders</h3>        
+        <h3 class="mb-5 font-weight-bold">Orders</h3>
         <div class="col-lg-10 col-md-12 col-sm-12 row">
             <div class="form-group">
                 {{ Form::label('Product Name: ','',['class' => 'font-weight-bold']) }}
@@ -44,17 +44,17 @@ Add new order
                 !!}
                 <span class="text-danger">{{ $errors->first('order_status')}}</span>
             </div>
-            
+
             <div class="form-group">
                 {{ Form::label('Payment Status: ','',['class' => 'font-weight-bold']) }}
                 {{ Form::text('payment_status', null, ['class' => 'form-control' ]) }}
-                <br>                
+                <br>
                 <span class="text-danger">{{ $errors->first('Payment Status')}}</span>
             </div>
             <div class="form-group">
                 {{ Form::label('Total: ','',['class' => 'font-weight-bold']) }}
                 {{ Form::text('Total', null, ['class' => 'form-control' ]) }}
-                <br>                
+                <br>
                 <span class="text-danger">{{ $errors->first('Total')}}</span>
             </div>
 

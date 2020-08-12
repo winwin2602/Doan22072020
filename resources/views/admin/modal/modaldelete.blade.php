@@ -2,12 +2,12 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete it?</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Bạn có chắt muốn xóa dữ liệu này không?</h5>
 			</div>
 			<div class="modal-footer">
 				<input type="hidden" id="id" name="id">
-				<input type="submit" class="btn btn-danger" value="Delete">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				<input type="submit" class="btn btn-danger" value="Xóa">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
 			</div>
 		</div>
 	</div>
