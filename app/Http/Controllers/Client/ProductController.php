@@ -48,7 +48,8 @@ class ProductController extends Controller
         $product = $this->productRepository->find($request->id);
         $category = $this->categoryRepository->find($product->category_id);
         $brand = $this->brandRepository->find($product->brand_id);
-        return view('client.layouts.product_detail', compact('product', 'category','brand'));
+        $quantity = $product->quantity;
+        return view('client.layouts.product_detail', compact('product', 'category','brand','quantity'));
     }
     /**
      * Show the form for creating a new resource.

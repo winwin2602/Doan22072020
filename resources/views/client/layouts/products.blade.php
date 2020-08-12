@@ -51,6 +51,17 @@
                             @endforeach
                         </div>
                     </div>
+                    <div class="filter-brand-left mt-2">
+                        <div class="title-left">
+                            <h3>Giá</h3>
+                        </div>
+                        <input type="radio" id="price1" name="price" value="1">
+                        <label class="ml-2 font-weight-bold" for="price1">1.000.000 - 5.000.000</label><br>
+                        <input type="radio" id="price2" name="price" value="2">
+                        <label class="ml-2 font-weight-bold" for="price2">5.000.000 - 10.000.000</label><br>
+                        <input type="radio" id="price3" name="price" value="3">
+                        <label class="ml-2 font-weight-bold" for="price3"> > 10.000.000</label><br><br>
+                    </div>
                     <!--  -->
                     <div class="filter-brand-left">
                         <div class="baner-box">
@@ -99,7 +110,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
