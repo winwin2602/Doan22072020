@@ -51,69 +51,73 @@
                             @endforeach
                         </div>
                     </div>
+                    <!-- start prices -->
                     <div class="filter-brand-left mt-2">
                         <div class="title-left">
-                            <h3>Giá</h3>
+                            <h3>Khoảng Giá</h3>
                         </div>
-                        <input type="radio" id="price1" name="price" value="1">
-                        <label class="ml-2 font-weight-bold" for="price1">1.000.000 - 5.000.000</label><br>
-                        <input type="radio" id="price2" name="price" value="2">
-                        <label class="ml-2 font-weight-bold" for="price2">5.000.000 - 10.000.000</label><br>
-                        <input type="radio" id="price3" name="price" value="3">
-                        <label class="ml-2 font-weight-bold" for="price3"> > 10.000.000</label><br><br>
-                    </div>
-                    <!--  -->
-                    <div class="filter-brand-left">
-                        <div class="baner-box">
-                            <img src="{{asset('/images/ban.jpg')}}">
+                        <div class="">
+                            <div class="">
+                                <div class="s">
+                                    <form action="{{url('product-all')}}" method="GET">
+                                        <input name='min_price' type="text" maxlength="13" class="s" placeholder="₫ TỪ" >
+                                        <div class=""></div>
+                                        <input name="max_price" type="text" maxlength="13" class="shopee-price-range-filter__input" placeholder="₫ ĐẾN" ></div></div>
+                                        <button type="submit" class="">Áp dụng</button></div>
+                                    </form>                                    
+                                </div>
+                                <!--  -->
+                                <div class="filter-brand-left">
+                                    <div class="baner-box">
+                                        <img src="{{asset('/images/ban.jpg')}}">
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <!--  -->
+                            </div>
                         </div>
-                    </div>
-                    <!--  -->
-                    <!--  -->
-                </div>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                <div class="right-product-box">
-                    <div class="row product-categorie-box">
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                <div class="row">
-                                    @foreach($products as $key => $item)
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="products-single fix">
-                                            <div class="card">
-                                                <div class="box-img-hover">
-                                                    <img src="{{asset('images/'.$item->url_image)}}" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="{{url('/product-detail?id='.$item->id)}}" data-toggle="tooltip" data-placement="right" title="{{trans('message.View')}}"><i class="fas fa-eye"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="{{ url('/add-to-cart?product_id='.$item->id.'&quantity=1') }}">{{trans('message.Add to Cart')}}</a>
+                        <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+                            <div class="right-product-box">
+                                <div class="row product-categorie-box">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                                            <div class="row">
+                                                @foreach($products as $key => $item)
+                                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                                    <div class="products-single fix">
+                                                        <div class="card">
+                                                            <div class="box-img-hover">
+                                                                <img src="{{asset('images/'.$item->url_image)}}" class="img-fluid" alt="Image">
+                                                                <div class="mask-icon">
+                                                                    <ul>
+                                                                        <li><a href="{{url('/product-detail?id='.$item->id)}}" data-toggle="tooltip" data-placement="right" title="{{trans('message.View')}}"><i class="fas fa-eye"></i></a></li>
+                                                                    </ul>
+                                                                    <a class="cart" href="{{ url('/add-to-cart?product_id='.$item->id.'&quantity=1') }}">{{trans('message.Add to Cart')}}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="why-text">
+                                                            <h4>{{Illuminate\Support\Str::limit($item->name, 28)}}</h4>
+                                                            @if($item->promotion_price != null)
+                                                            <div>
+                                                                <h5 style="float: left;padding-right: 10px;">{{$item->promotion_price}}₫ </h5>
+                                                                <h5 class="text-secondary"><strike>₫{{$item->price}}</strike></h5>
+                                                            </div>
+                                                            @else
+                                                            <h5>{{$item->price}}</h5>
+                                                            @endif
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="why-text">
-                                                <h4>{{Illuminate\Support\Str::limit($item->name, 28)}}</h4>
-                                                @if($item->promotion_price != null)
-                                                <div>
-                                                    <h5 style="float: left;padding-right: 10px;">{{$item->promotion_price}}₫ </h5>
-                                                    <h5 class="text-secondary"><strike>₫{{$item->price}}</strike></h5>
-                                                </div>
-                                                @else
-                                                <h5>{{$item->price}}</h5>
-                                                @endif
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- End Shop Page -->
-@endsection
+            <!-- End Shop Page -->
+            @endsection
