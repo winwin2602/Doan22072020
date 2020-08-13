@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
-				<h2 class="noo-sh-title">{{trans('message.We are')}} <span>AEShop</span></h2>
+				<h2 class="noo-sh-title">{{trans('message.We are')}} <span>PANDAShop</span></h2>
 				<p>"{{trans('message.Sed ut')}}
 				</p>
 			</div>
@@ -25,7 +25,7 @@
         	<div class="hover-team">
         		<div class="our-team"> <img src="{{asset('front_assets/images/img-1.jpg')}}" alt="" />
         			<div class="team-content">
-        				<h3 class="title">Nguyễn Phúc Hội</h3> <span class="post">{{trans('message.Web Developer')}}</span> </div>
+        				<h3 class="title">Nguyễn Văn A</h3> <span class="post">{{trans('message.Web Developer')}}</span> </div>
         				<ul class="social">
         					<li>
         						<a href="#" class="fab fa-facebook"></a>
@@ -37,7 +37,7 @@
         				<div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
         			</div>
         		<div class="team-description">
-        				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+        				<p>Với những kinh nghiệm 5 năm trong ngành thiết kế wweb site và lập trình,với khả năng tư duy phân tích thiết kế website một cách tối ưu nhất. </p>
         		</div>
         	<hr class="my-0"> </div>
         </div>

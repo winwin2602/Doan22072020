@@ -11,7 +11,7 @@ return[
   'login'=>'Login',
   'register'=>'Register',
   'call us'=>'Call Us',
-  'about WAEshop'=>'About WAEshop',
+  'about WAEshop'=>'About PandaShop',
   'Lorem'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   'Information'=>'Information',
   'intro'=>'introduce',

@@ -11,7 +11,7 @@ return[
   'login'=>'Đăng Nhập',
   'register'=>'Đăng Ký',
   'call us'=>'Số Điện Thoại',
-  'about WAEshop'=>'Cửa Hàng WAEshop',
+  'about PandaShop'=>'Cửa Hàng PandaShop',
   'Lorem'=>'Với các giải pháp bán hàng từ Haravan, doanh nghiệp và cá nhân có thể vận hành việc kinh doanh trên mọi kênh bán hàng tại một nơi duy nhất. Từ việc quản lý sản phẩm, khách hàng, đơn hàng, tồn kho, giao nhận, marketing, khuyến mãi,... cho đến những bảng báo cáo doanh thu và phân tích hiệu quả kinh doanh đều được thống kê tự động.',
   'Information'=>'Thông Tin',
   'intro'=>'Giới thiệu',

@@ -37,10 +37,10 @@
                             <h4>{{trans('message.Contact Us')}}</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>{{trans('message.Address')}}: 33 Xô Viết Nghệ Tĩnh <br>Hải Châu District<br> Hòa Cường Nam Ward</p>
+                                    <p><i class="fas fa-map-marker-alt"></i>{{trans('message.Address')}}: 33 Xô Viết Nghệ Tĩnh <br>Hải Nam District<br> Hòa Cường Nam Ward</p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>{{trans('message.Phone')}}: <a href="">+(84) 0384443449</a></p>
+                                    <p><i class="fas fa-phone-square"></i>{{trans('message.Phone')}}: <a href="">+(84) 0384443456</a></p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-envelope"></i>{{trans('message.Email')}}: <a href="mailto:contactinfo@gmail.com">winwin260299@gmail.com</a></p>

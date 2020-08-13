@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use App\Models\Customer;
 use App\Repositories\Customer\CustomerInterface;
 use App\Repositories\Order\OrderInterface;
 use App\Repositories\OrderDetail\OrderDetailInterface;
@@ -14,7 +15,7 @@ use App\Repositories\User\UserInterface;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Auth;
-
+use Str;
 class CartController extends Controller
 {
     private $productRepository;
@@ -133,18 +134,35 @@ class CartController extends Controller
     //Page cart checkout
     public function checkout()
     {
+        $customer = new Customer();
         if (Auth::check()){
             $customer = $this->customerRepository->getCustomerByUserId(Auth::user()->id);
             return view('client.layouts.payment', compact('customer'));
         }else{
-            return redirect()->back()->with('err', trans('log.err'));
+//            return redirect()->back()->with('err', trans('log.err'));
+            return view('client.layouts.payment',compact('customer'));
         }
     }
 
     //Payment
     public function payment(Request $request)
     {
-        $customer = $this->customerRepository->getCustomerByUserId(Auth::user()->id);
+        $customer = new Customer();
+        if (Auth::check()){
+            $customer = $this->customerRepository->getCustomerByUserId(Auth::user()->id);
+        }else{
+            $customer->full_name = $request->full_name;
+            $customer->address = $request->address;
+            $customer->phone_no = $request->phone_no;
+            $customer->email = $request->email;
+            $customer->slug= Str::slug($request->full_name);
+            $customer->is_deleted= false;
+            $customer->created_at= Carbon::now();
+            $customer->updated_at= Carbon::now();
+            $createCustomer= $this->customerRepository->create($customer->toArray());
+            $createCustomer->save();
+            $customer = $createCustomer;
+        }
         $order = new Order([
             'order_status' => 1, //1-un-confirmed | 2-confirmed
             'payment_status' => $request->payment_method,

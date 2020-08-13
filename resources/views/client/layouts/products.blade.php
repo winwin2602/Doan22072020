@@ -6,8 +6,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>AEshop {{trans('message.slogin')}} 24/24</h2>
-                    <h2>{{trans('message.Phone')}}: 0384443449</h2>
+                    <h2>PandaShop {{trans('message.slogin')}} 24/24</h2>
+                    <h2>{{trans('message.Phone')}}: 0384443456</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('/home') }}">{{trans('message.Home')}}</a></li>
                         <li class="breadcrumb-item active">{{trans('message.Shop')}}</li>
@@ -104,7 +104,7 @@
                                                                 <h5 class="text-secondary"><strike>₫{{$item->price}}</strike></h5>
                                                             </div>
                                                             @else
-                                                            <h5>{{$item->price}}</h5>
+                                                            <h5>{{$item->price}}₫</h5>
                                                             @endif
                                                         </div>
                                                     </div>

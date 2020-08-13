@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>AESHOP</strong></h1>
+                            <h1 class="m-b-20"><strong>PANDASHOP</strong></h1>
                             <p class="m-b-40">{{$slide->description}}</p>
                             <p><a class="btn hvr-hover" href="{{$slide->url}}">{{trans('message.buy now')}}</a></p>
                         </div>
