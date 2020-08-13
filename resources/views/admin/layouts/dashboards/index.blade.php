@@ -1,6 +1,6 @@
 @extends('admin.shared.main')
 @section('title')
-weaShopOnline - Dashboard
+    Panda electric shop - Trang chủ
 @endsection
 @section('content')
 	<div class="content_yield">

@@ -144,13 +144,18 @@ class CartController extends Controller
     //Payment
     public function payment(Request $request)
     {
-//        dd($request);
         $customer = $this->customerRepository->getCustomerByUserId(Auth::user()->id);
         $order = new Order([
             'order_status' => 1, //1-un-confirmed | 2-confirmed
             'payment_status' => $request->payment_method,
             'customer_id' => $customer->id,
         ]);
+        $products = $this->productRepository->find($request->product_id);
+        foreach ($products as $key => $product){
+            $product->quantity = $product->quantity - $request->quantity[$key];
+            echo $product->quantity.'\n';
+            $result = $this->productRepository->update($product->id, $product->toArray());
+        }
         $order_result = $this->orderRepository->create($order->toArray());
         $order_result->save();
         foreach ($request->product_id as $key => $value) {

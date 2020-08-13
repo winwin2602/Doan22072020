@@ -64,8 +64,8 @@
                             </h4>
                             @if($topHot->promotion_price != null)
                             <div>
-                                <h5 style="float: left;padding-right: 10px;">${{$topHot->promotion_price}} </h5>
-                                <h5 class="text-secondary"> $<strike>{{$topHot->price}}</strike></h5>
+                                <h5 style="float: left;padding-right: 10px;">{{$topHot->promotion_price}} ₫</h5>
+                                <h5 class="text-secondary"> <strike>{{$topHot->price}}₫</strike></h5>
                             </div>
                             @else
                             <h5>${{$topHot->price}}</h5>
@@ -96,11 +96,11 @@
                             </h4>
                             @if($topNew->promotion_price != null)
                             <div>
-                                <h5 style="float: left;padding-right: 10px;">${{$topNew->promotion_price}} </h5>
-                                <h5 class="text-secondary"> $<strike>{{$topHot->price}}</strike></h5>
+                                <h5 style="float: left;padding-right: 10px;">{{$topNew->promotion_price}}₫ </h5>
+                                <h5 class="text-secondary"> <strike>{{$topHot->price}}₫</strike></h5>
                             </div>
                             @else
-                            <h5>${{$topNew->price}}</h5>
+                            <h5>{{$topNew->price}}₫</h5>
                             @endif
                         </div>
                     </div>
@@ -128,11 +128,11 @@
                             </h4>
                             @if($topSale->promotion_price != null)
                             <div>
-                                <h5 style="float: left;padding-right: 10px;">${{$topSale->promotion_price}} </h5>
-                                <h5 class="text-secondary"> $<strike>{{$topSale->price}}</strike></h5>
+                                <h5 style="float: left;padding-right: 10px;">{{$topSale->promotion_price}} ₫</h5>
+                                <h5 class="text-secondary"> <strike>{{$topSale->price}}₫</strike></h5>
                             </div>
                             @else
-                            <h5>${{$topSale->price}}</h5>
+                            <h5>₫{{$topSale->price}}</h5>
                             @endif
                         </div>
                     </div>
