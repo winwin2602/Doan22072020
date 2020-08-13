@@ -42,6 +42,7 @@ class ProductController extends Controller
         if($request->min_price || $request->max_price){
             $products = $this->productRepository->getByPrice($request->min_price, $request->max_price);
         }
+        $products = $products->where('quantity','>',0);
         return view('client.layouts.products', compact('products', 'categories', 'brands'));
     }
 
