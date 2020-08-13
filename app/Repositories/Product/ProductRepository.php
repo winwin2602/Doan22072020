@@ -2,6 +2,7 @@
 namespace App\Repositories\Product;
 
 use App\Repositories\EloquentRepository;
+use Cassandra\Collection;
 
 class ProductRepository extends EloquentRepository implements ProductInterface
 {
@@ -48,29 +49,42 @@ class ProductRepository extends EloquentRepository implements ProductInterface
     }
     public function getByPrice($min, $max){
         $products = $this->_model::where('is_deleted', 0)->where('quantity','>',0)->get();
-        if($products->whereNull('promotion_price')){
-            $products = $products->whereNull('promotion_price');
+        $productsHaveNotPromotionPrice = $products->whereNull('promotion_price');
+        $productsHavePromotionPrice = $products->whereNotNull('promotion_price');
+        $arr = array();
+        if($productsHaveNotPromotionPrice){
             if($min != null){
                 if ($max != null){
-                    $products = $products->where([['price','>=',$min],['price','<=',$max]])->get();
+                    $productsHaveNotPromotionPrice = $productsHaveNotPromotionPrice->whereBetween('price', [$min, $max]);
                 }else{
-                    $products = $products->where('price','>=',$min);
+                    $productsHaveNotPromotionPrice = $productsHaveNotPromotionPrice->where('price','>=',$min);
                 }
             }elseif ($max != null){
-                $products = $products->where('price','<=',$max)->get();
+                $productsHaveNotPromotionPrice = $productsHaveNotPromotionPrice->where('price','<=',$max);
+            }else{
+                $productsHaveNotPromotionPrice = $productsHaveNotPromotionPrice;
             }
-        }else{
-            $products = $products->whereNotNull('promotion_price');
-            if($min != null){
-                if ($max != null){
-                    $products = $products->where([['promotion_price','>=',$min],['promotion_price','<=',$max]])->get();
-                }else{
-                    $products = $products->where('promotion_price','>=',$min)->get();
-                }
-            }elseif ($max != null){
-                $products = $products->where('promotion_price','<=',$max)->get();
+            foreach ($productsHaveNotPromotionPrice as $product){
+                $arr[] = $product;
             }
         }
-        return $products;
+        if($productsHavePromotionPrice){
+            if($min != null){
+                if ($max != null){
+                    $productsHavePromotionPrice = $productsHavePromotionPrice->whereBetween('promotion_price', [$min, $max]);
+                }else{
+                    $productsHavePromotionPrice = $productsHavePromotionPrice->where('promotion_price','>=',$min);
+                }
+            }elseif ($max != null){
+                $productsHavePromotionPrice = $productsHavePromotionPrice->where('promotion_price','<=',$max);
+
+            }else{
+                $productsHavePromotionPrice = $productsHavePromotionPrice;
+            }
+            foreach ($productsHavePromotionPrice as $product){
+                $arr[] = $product;
+            }
+        }
+        return $arr;
     }
 }
