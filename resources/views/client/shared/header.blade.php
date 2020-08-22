@@ -73,7 +73,7 @@
                         <p>{{$item['quantity']}}x - <span class="price">{{$item['price']}}</span></p>
                     </li>
                     <li class="total text-right">
-                        <span><strong>{{trans('message.Total amount')}}</strong>: ${{$item['quantity'] * $item['price']}}</span>
+                        <span><strong>{{trans('message.Total amount')}}</strong>: ₫{{$item['quantity'] * $item['price']}}</span>
                     </li>
 
                     @endforeach
@@ -82,7 +82,7 @@
                     @endif
                     <li class="total">
                         <a href="{{ url('/cart-page') }}" class="btn btn-default hvr-hover btn-cart">{{trans('message.VIEW CART')}}</a>
-                        <span class="float-right"><h4>{{trans('message.Total')}}: ${{$totalAmount ?? 0}}</h4></span>
+                        <span class="float-right"><h4>{{trans('message.Total')}}: ₫{{$totalAmount ?? 0}}</h4></span>
                     </li>
                 </ul>
             </li>
@@ -124,9 +124,6 @@
                         <i class="fa fa-shopping-bag"></i>
                         <span class="badge text-danger">{{session()->has('cart') ? count(session('cart')) : 0}}</span>
                     </a></li>
-                    <li class="wuc-phone">
-                        <a href="tel:1900636648" title="Điện thoại tư vấn" class="nph-phone"> <span class="ico fa fa-mobile"></span> <span class="val">1900 636 638</span> </a>
-                    </li>
                 </ul>
 
             </div>

@@ -78,13 +78,13 @@
                                         <a href="#">{{$item['name']}}</a>
                                     </td>
                                     <td class="price-pr">
-                                        <p>${{$item['price']}}</p>
+                                        <p>₫{{$item['price']}}</p>
                                     </td>
                                     <td class="quantity-box">
                                         <p>{{$item['quantity']}}</p>
                                     </td>
                                     <td class="total-pr">
-                                        <p>${{$item['price'] * $item['quantity']}}</p>
+                                        <p>₫{{$item['price'] * $item['quantity']}}</p>
                                     </td>
                                 </tr>
                             @endforeach
@@ -99,7 +99,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="4" class="text-right font-weight-bold">{{trans('message.Total amount')}}</td>
-                                <td colspan="1">${{$totalAmount ?? 0}}</td>
+                                <td colspan="1">₫{{$totalAmount ?? 0}}</td>
                             </tr>
                         </tfoot>
                     </table>

@@ -44,7 +44,7 @@
 				<td class="text-center">
 					{{ Form::open(['route'=>['order.update',$order->id],'method'=>'put']) }}
 					<button class="btn btn-sm btn-success btn-confirmation" type="submit">
-						{{$order->order_status == 1 ? 'Unconfirmed' : 'Confirmed'}}
+						{{$order->order_status == 1 ? 'Đang chờ giao' : 'Đã giao Hàng'}}
 					</button>
 					{{ Form::close() }}
 				</td>
@@ -57,11 +57,11 @@
 					@endif
 				</td>
 
-				<td class="text-center">{!! Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->created_at)->format('d.m.Y H:i') !!}</td>
+				<td class="text-center">{!! Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->created_at)->format('d.m.Y') !!}</td>
 
 				<td class="text-center action_icon">
 					<a href="{{url('admin/order/show/'.$order->id)}}"><i class="fa fa-info detail"></i></a>
-{{--					<a type="button" class="fas fa-trash-alt deletebutton text-danger btn" data-id="{{$order->id}}" data-toggle="modal" data-target="#Modal"></a>--}}
+					<a type="button" class="fas fa-trash-alt deletebutton text-danger btn" data-id="{{$order->id}}" data-toggle="modal" data-target="#Modal"></a>
 				</td>
 			</tr>
 			@endforeach

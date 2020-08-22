@@ -254,7 +254,8 @@ ul.cart-list{
 ul.cart-list > li{
     position: relative;
     border-bottom: solid 1px #efefef;
-    padding: 15px 15px 23px 15px !important;
+    height: 70px;
+    /*padding: 15px 15px 23px 15px !important;*/
 }
 
 ul.cart-list > li > a.photo{

@@ -195,8 +195,8 @@ class CartController extends Controller
             $orderId = $order_result->id.date("YmdHi"); // M� don h�ng
             $orderInfo = "Thanh toán bằng Momo";
             $amount = $request->total_amount;
-            $notifyurl = "http://localhost/New%20folder/finalLaravel_v2/weaShopOnline/public/cart-page";
-            $returnUrl = "http://localhost/New%20folder/finalLaravel_v2/weaShopOnline/public/return-payment";
+            $notifyurl = "http://localhost/DOAN_2020/Doan22072020/public/cart-page";
+            $returnUrl = "http://localhost/DOAN_2020/Doan22072020/public/return-payment";
             $extraData = "merchantName=MoMo Partner";
             $requestId = time() . "";
             $requestType = "captureMoMoWallet";

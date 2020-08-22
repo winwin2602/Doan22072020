@@ -53,7 +53,7 @@
                                                 <a href="#">{{$item['name']}}</a>
                                             </td>
                                             <td class="price-pr">
-                                                <p>${{$item['price']}}</p>
+                                                <p>₫{{$item['price']}}</p>
                                             </td>
                                             <td class="quantity-box">
                                                 <input type="number" size="4" name="quantity[]" value="{{$item['quantity']}}"
@@ -62,7 +62,7 @@
                                                         style="width: 80px;">
                                             </td>
                                             <td class="total-pr">
-                                                <p>${{$item['price'] * $item['quantity']}}</p>
+                                                <p>₫{{$item['price'] * $item['quantity']}}</p>
                                             </td>
                                             <td class="remove-pr">
                                                 <button value="{{$item['id']}}" class="btn btn-danger btn-sm remove-from-cart" >

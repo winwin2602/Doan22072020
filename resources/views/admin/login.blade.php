@@ -25,7 +25,7 @@
                 <!-- Form login -->
                 <div class="col-xs-12 col-sm-6">
                     <div class="login_form">
-                        <h3>WeaShop</h3>
+                        <h3>PandaShop</h3>
                             <form method="POST" action="{{ route('admin.login') }}">
                                 @csrf                                
                                 <div class="form-group">

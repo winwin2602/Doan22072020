@@ -12,7 +12,7 @@ return[
   'register'=>'Đăng Ký',
   'call us'=>'Số Điện Thoại',
   'about PandaShop'=>'Cửa Hàng PandaShop',
-  'Lorem'=>'Với các giải pháp bán hàng từ Haravan, doanh nghiệp và cá nhân có thể vận hành việc kinh doanh trên mọi kênh bán hàng tại một nơi duy nhất. Từ việc quản lý sản phẩm, khách hàng, đơn hàng, tồn kho, giao nhận, marketing, khuyến mãi,... cho đến những bảng báo cáo doanh thu và phân tích hiệu quả kinh doanh đều được thống kê tự động.',
+  'Lorem'=>'Với các giải pháp bán hàng từ PandaShop, doanh nghiệp và cá nhân có thể vận hành việc kinh doanh trên mọi kênh bán hàng tại một nơi duy nhất. Từ việc quản lý sản phẩm, khách hàng, đơn hàng, tồn kho, giao nhận, marketing, khuyến mãi,... cho đến những bảng báo cáo doanh thu và phân tích hiệu quả kinh doanh đều được thống kê tự động.',
   'Information'=>'Thông Tin',
   'intro'=>'Giới thiệu',
   'Customer Service'=>'Dịch Vụ khách hàng',
@@ -64,8 +64,7 @@ return[
   'Total amount'=>'Tổng cộng',
   'Cart is empty'=>'
   Giỏ hàng trống !',
-  'VIEW CART'=>'
-  XEM GIỎ HÀNG',
+  'VIEW CART'=>'GIỎ HÀNG',
   'Member Login'=>'Đăng nhập thành viên',
   'Forgot Password'=>'Quên mật khẩu',
   'User Name'=>'
@@ -81,7 +80,7 @@ return[
   'Privacy Policy'=>'Chính sách bảo mật',
   //vechungtoi
   'We are'=>'Chúng tôi là',
-  'Sed ut'=>'Tháng 9-2014, Haravan chính thức ra mắt nền tảng xây dựng website chuyên nghiệp, với mong muốn giúp người kinh doanh, doanh nghiệp bán lẻ dễ dàng sở hữu một website thương mại điện tử chuyên nghiệp với chi phí hợp lý để họ có thể xây dựng thương hiệu trên kênh online vượt trội trong thời đại số.
+  'Sed ut'=>'Tháng 9-2014, PandaShop chính thức ra mắt nền tảng xây dựng website chuyên nghiệp, với mong muốn giúp người kinh doanh, doanh nghiệp bán lẻ dễ dàng sở hữu một website thương mại điện tử chuyên nghiệp với chi phí hợp lý để họ có thể xây dựng thương hiệu trên kênh online vượt trội trong thời đại số.
 
   Cùng với sự phát triển của thị trường, thương mại điện tử, kinh doanh online, kinh doanh trên mạng xã hội... và bán hàng đa kênh dần trở thành xu hướng, nhà kinh doanh buộc phải thay đổi để thích nghi với những công nghệ và thói quen mua sắm mới từ thế hệ khách hàng tiếp nối.
 

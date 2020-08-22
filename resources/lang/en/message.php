@@ -12,7 +12,7 @@ return[
   'register'=>'Register',
   'call us'=>'Call Us',
   'about WAEshop'=>'About PandaShop',
-  'Lorem'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  'Lorem'=>'With sales solutions from PandaShop, businesses and individuals can run their business across all sales channels in one place. From product management, customers, orders, inventory, delivery, marketing, promotions, ... to the sales report and business performance analysis are automatically statistic. .',
   'Information'=>'Information',
   'intro'=>'introduce',
   'Customer Service'=>'Customer Service',
@@ -77,11 +77,7 @@ return[
   'Privacy Policy'=>'Privacy Policy',
   //vechungtoi
   'We are'=>'We are',
-  'Sed ut'=>'In September 2014, Haravan, the office, one of the websites, one of our websites could be an online software.
-
-Love, finance, culture, culture, finance, culture, technology finance and our content
-
-Strong, intense, Haravan not, data, sex',
+  'Sed ut'=>'With sales solutions from PandaShop, businesses and individuals can run their business across all sales channels in one place. From product management, customers, orders, inventory, delivery, marketing, promotions, ... to the sales report and business performance analysis are automatically statistic. .',
   'Meet Our Team'=>'Meet Our Team',
   'Web Developer'=>'Web Developer',
    'Categories'=>'Categories',

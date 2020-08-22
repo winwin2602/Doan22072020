@@ -466,9 +466,11 @@
      padding-bottom: 30px;
      padding-left: 10px;
      padding-right: 30px;
+     font-family: "Times New Roman", Times, serif;
 }
  nav.navbar.bootsnav ul.nav li.active > a{
      color: #ec0e239e;
+     font-family: "Times New Roman", Times, serif;
 }
  nav.navbar.bootsnav ul.nav li.active > a:hover{
      color: #d33b33;
@@ -815,6 +817,7 @@
      cursor: pointer;
      padding: 5px 30px;
      font-size: 18px;
+     font-family: "Times New Roman", Times, serif;
 }
  .filter-button-group button.active{
      background: #60d6e8e6;
@@ -1357,6 +1360,7 @@
      font-weight: 700;
      color: #ffffff;
      padding-bottom: 30px;
+     font-family: "Times New Roman", Times, serif;
 }
  .all-title-box .breadcrumb{
      background: #d33b33;
@@ -1384,6 +1388,7 @@
      text-transform: uppercase;
      font-style: italic;
      font-weight: 700;
+     font-family: "Times New Roman", Times, serif;
 }
  .about-box-main p{
      padding-bottom: 20px;
@@ -1604,6 +1609,7 @@
 }
  .title-left h3{
      font-weight: 700;
+     font-family: "Times New Roman", Times, serif;
 }
  .list-group-item {
      border: none;
@@ -2175,6 +2181,7 @@
  .contact-info-left h2{
      font-size: 22px;
      font-weight: 700;
+     font-family: "Times New Roman", Times, serif;
 }
  .contact-info-left p{
      margin-bottom: 15px;
@@ -2207,6 +2214,7 @@
  .contact-form-right h2{
      font-size: 24px;
      font-weight: 700;
+     font-family: "Times New Roman", Times, serif;
 }
  .contact-form-right p{
      margin-bottom: 15px;
