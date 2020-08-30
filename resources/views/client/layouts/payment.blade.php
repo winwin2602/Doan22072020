@@ -112,6 +112,8 @@
                     <label for="cod">{{trans('message.Cash')}}</label> <br>
                     <input type="radio" name="payment_method" id="momo" value="2"/>
                     <label for="momo">{{trans('message.Momo')}}</label>
+                    <input type="radio" name="payment_method" id="vnpay" value="3"/>
+                    <label for="momo">thanh toán vnpay</label>
                 </div>
             </div>
             <div class="col-12 shopping-box">

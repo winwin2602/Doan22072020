@@ -52,8 +52,10 @@
 				<td class="text-center">
 					@if($order->payment_status == 1)
 						<button class="btn btn-sm btn-danger btn-payment" value="{{$order->id}}">COD</button>
-					@else
+					@elseif($order->payment_status == 2)
 						<button class="btn btn-sm btn-success btn-payment" value="{{$order->id}}" >Momo</button>
+					@else
+						<button class="btn btn-sm btn-success btn-payment" value="{{$order->id}}" >VNPAY</button>
 					@endif
 				</td>
 

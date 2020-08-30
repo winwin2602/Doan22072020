@@ -51,8 +51,8 @@ class CartController extends Controller
         // if cart is empty then this the first product
         if(!$cart) {
             if (intval($request->quantity) > $product->quantity) {
-                session()->flash('err', 'Quantity less than '.$product->quantity);
-                return redirect()->back()->with('err', 'Quantity less than '.$product->quantity);
+                session()->flash('err', 'Số Lượng ít hơn '.$product->quantity);
+                return redirect()->back()->with('err', 'Số Lượng ít hơn '.$product->quantity);
             }else{
                 $cart = [
                     $product->id => [
@@ -71,8 +71,8 @@ class CartController extends Controller
         // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$product->id])) {
             if (intval($request->quantity) > $product->quantity) {
-                session()->flash('err', 'Quantity less than '.$product->quantity);
-                return redirect()->back()->with('err', 'Quantity less than '.$product->quantity);
+                session()->flash('err', 'Số Lượng ít hơn '.$product->quantity);
+                return redirect()->back()->with('err', 'Số Lượng ít hơn '.$product->quantity);
             }else{
                 $cart[$product->id]['quantity'] += $request->quantity;
                 session()->put('cart', $cart);
@@ -81,8 +81,8 @@ class CartController extends Controller
         }
         // if item not exist in cart then add to cart
         if (intval($request->quantity) > $product->quantity) {
-            session()->flash('err', 'Quantity less than '.$product->quantity);
-            return redirect()->back()->with('err', 'Quantity less than '.$product->quantity);
+            session()->flash('err', 'Số Lượng ít hơn '.$product->quantity);
+            return redirect()->back()->with('err', 'Số Lượng ít hơn '.$product->quantity);
         }else{
             $cart[$product->id] = [
                     "id" => $product->id,
@@ -105,7 +105,7 @@ class CartController extends Controller
             $product = Product::find($request->id);
             if($product){
                 if (intval($request->quantity) > $product->quantity) {
-                    session()->flash('err', 'Quantity less than '.$product->quantity);
+                    session()->flash('err', 'Số Lượng ít hơn '.$product->quantity);
                 }else{
                     $cart = session()->get('cart');
                     $cart[$request->id]["quantity"] = intval($request->quantity);
@@ -186,6 +186,7 @@ class CartController extends Controller
             $result = $this->orderDetailRepository->create($order_detail->toArray());
             $result->save();
         }
+        // $request->session()->forget('cart');
         if ($request->payment_method == 2) {// 1-Cod, 2-Momo
             //MoMo
             $endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
@@ -195,8 +196,8 @@ class CartController extends Controller
             $orderId = $order_result->id.date("YmdHi"); // M� don h�ng
             $orderInfo = "Thanh toán bằng Momo";
             $amount = $request->total_amount;
-            $notifyurl = "http://localhost/DOAN_2020/Doan22072020/public/cart-page";
-            $returnUrl = "http://localhost/DOAN_2020/Doan22072020/public/return-payment";
+            $notifyurl = url('cart-page');
+            $returnUrl = url('return-payment');
             $extraData = "merchantName=MoMo Partner";
             $requestId = time() . "";
             $requestType = "captureMoMoWallet";
@@ -222,8 +223,66 @@ class CartController extends Controller
 
         }
         $request->session()->forget('cart');
-        return redirect('/cart-page');
+        // thanh toan vnpay
+        if ($request->payment_method == 3) {// 1-Cod, 2-Momo 3 vnpay
+        session(['cost_id' => $request->id]);
+        session(['url_prev' => url()->previous()]);
+        $vnp_TmnCode = "5JUZLNGZ"; //Mã website tại VNPAY 
+        $vnp_HashSecret = "ZIYDABXSFWJSAFKVGNNTRHHTXHTAAWYE"; //Chuỗi bí mật
+        $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+        $vnp_Returnurl = url('return-payment?id='.$order_result->id);
+
+        $vnp_TxnRef = date("YmdHis"); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_OrderInfo = "Thanh toán hóa đơn phí dich vụ";
+        $vnp_OrderType = 'billpayment';
+        $vnp_Amount = $request->total_amount * 100;
+        $vnp_Locale = 'vn';
+        $vnp_IpAddr = request()->ip();
+
+        $inputData = array(
+            "vnp_Version" => "2.0.0",
+            "vnp_TmnCode" => $vnp_TmnCode,
+            "vnp_Amount" => $vnp_Amount,
+            "vnp_Command" => "pay",
+            "vnp_CreateDate" => date('YmdHis'),
+            "vnp_CurrCode" => "VND",
+            "vnp_IpAddr" => $vnp_IpAddr,
+            "vnp_Locale" => $vnp_Locale,
+            "vnp_OrderInfo" => $vnp_OrderInfo,
+            "vnp_OrderType" => $vnp_OrderType,
+            "vnp_ReturnUrl" => $vnp_Returnurl,
+            "vnp_TxnRef" => $vnp_TxnRef,
+        );
+
+        if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+            $inputData['vnp_BankCode'] = $vnp_BankCode;
+        }
+        ksort($inputData);
+        $query = "";
+        $i = 0;
+        $hashdata = "";
+        foreach ($inputData as $key => $value) {
+            if ($i == 1) {
+                $hashdata .= '&' . $key . "=" . $value;
+            } else {
+                $hashdata .= $key . "=" . $value;
+                $i = 1;
+            }
+            $query .= urlencode($key) . "=" . urlencode($value) . '&';
+        }
+
+        $vnp_Url = $vnp_Url . "?" . $query;
+        if (isset($vnp_HashSecret)) {
+           // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
+            $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
+            $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+        }
+        return redirect($vnp_Url);
     }
+        $request->session()->forget('cart');    
+        return redirect('/cart-page');
+
+}
     function execPostRequest($url, $data)
     {
         $ch = curl_init($url);
@@ -249,11 +308,25 @@ class CartController extends Controller
             $id = substr($request->orderId, 0,-12);
             $order = $this->orderRepository->find($id);
             $order->order_status = 1;//0-unconfirmed, 1-confirmed
-            $order->payment_status = 2;//1-COD, 2-MOMO
+            $order->payment_status = 2;//1-COD, 2-MOMO 3 VNPAY
             $result = $this->orderRepository->update($id, $order->toArray());
             $result->save();
-            $request->session()->forget('cart');
+            
+            return redirect('/cart-page')->with('message' ,'Payment by momo successful!');
         }
-        return redirect('/cart-page')->with('message' ,'Payment by momo successful!');
+        if($request->vnp_ResponseCode == '00') {
+           $id = $request->id;
+            $order = $this->orderRepository->find($id);
+            // dd($order);
+            $order->order_status = 1;//0-unconfirmed, 1-confirmed
+            $order->payment_status = 3;//1-COD, 2-MOMO 3 VNPAY
+            $result = $this->orderRepository->update($id, $order->toArray());
+            $result->save();
+            
+            return redirect('/cart-page')->with('message' ,'Payment by vnpay successful!');
+        }else{
+            return redirect('/cart-page');
+        }
     }
+    
 }

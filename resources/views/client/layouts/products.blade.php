@@ -60,10 +60,12 @@
                             <div class="">
                                 <div class="s">
                                     <form action="{{url('product-all')}}" method="GET">
-                                        <input name='min_price' type="text" maxlength="13" class="s" placeholder="₫ TỪ" >
+                                        <input class="form-control" name='min_price' type="text" maxlength="13" class="s" placeholder="₫ TỪ" >
                                         <div class=""></div>
-                                        <input name="max_price" type="text" maxlength="13" class="shopee-price-range-filter__input" placeholder="₫ ĐẾN" ></div></div>
-                                        <button type="submit" class="">Áp dụng</button></div>
+                                        <br>
+                                        <input class="form-control" name="max_price" type="text" maxlength="13" class="shopee-price-range-filter__input" placeholder="₫ ĐẾN" ></div></div>
+                                        <br>
+                                        <button type="submit" class="btn btn-block btn-primary">Áp dụng</button></div>
                                     </form>                                    
                                 </div>
                                 <!--  -->

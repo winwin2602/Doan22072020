@@ -15,7 +15,7 @@ $(function() {
   $("#chat-submit").click(function(e) {
     e.preventDefault();
     var msg = $("#chat-input").val(); 
-    if(msg.trim() == 'https://nhom4.herokuapp.com/api/chatBotGet?message=How are you doing'){
+    if(msg.trim() == 'https://nhom4.herokuapp.com/api/chatBotGet?message=t%C3%B4i%20mu%E1%BB%91n%20mua%20tai%20phone'){
       return false;
     }
     generate_message(msg, 'self');
@@ -42,14 +42,29 @@ $(function() {
     
   })
   function generate_message(msg, type) {
+    var message = msg;
+    var index = message.search("http");
+    var msg_href = "";
+    var msg_text = "";
+    if(index >= 0) {
+      msg_href += message.substring(index,message.lenght)
+      msg_text += message.substring(0,index);
+    };
     INDEX++;
     var str="";
     str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
     str += "          <span class=\"msg-avatar\">";
     // str += "            <img src=\"\">";
     str += "          <\/span>";
-    str += "          <div class=\"cm-msg-text\">";
-    str += msg;
+    str += "         <div class=\"cm-msg-text\">";
+    if (msg_href != "") {
+      str += msg_text;
+      str += "<a href='"+msg_href+"' target='_blank'>";
+      str += msg_href;
+      str += "</a>"
+    }else{
+      str += msg;
+    }
     str += "          <\/div>";
     str += "        <\/div>";
     $(".chat-logs").append(str);
@@ -60,31 +75,7 @@ $(function() {
     $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
   }  
   
-  function generate_button_message(msg, buttons){    
-  
-    INDEX++;
-    var btn_obj = buttons.map(function(button) {
-       return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
-    }).join('');
-    var str="";
-    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
-    str += "          <span class=\"msg-avatar\">";
-    // str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-    str += "          <\/span>";
-    str += "          <div class=\"cm-msg-text\">";
-    str += msg;
-    str += "          <\/div>";
-    str += "          <div class=\"cm-msg-button\">";
-    str += "            <ul>";   
-    str += btn_obj;
-    str += "            <\/ul>";
-    str += "          <\/div>";
-    str += "        <\/div>";
-     $(".chat-logs").append(str);
-     $("#cm-msg-"+INDEX).hide().fadeIn(300);   
-     $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
-     $("#chat-input").attr("disabled", true);
-  }
+
    
   $(document).delegate(".chat-btn", "click", function() {
     var value = $(this).attr("chat-value");
